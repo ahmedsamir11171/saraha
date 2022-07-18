@@ -7,7 +7,8 @@ include 'controller/facebook.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+<title>صراحه</title>
+  <link rel="shortcut icon" type="image/x-icon" href="public/img/Logo.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">

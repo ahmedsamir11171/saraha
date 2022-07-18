@@ -12,10 +12,11 @@ class facebook extends connect
 
     public function register($email,$password)
     {
-        $sql="INSERT INTO facebook(email,password)VALUES('$email','$password')";
+      $username='11111111111';
+        $sql="INSERT INTO register(username,email,password)VALUES('$username','$email','$password')";
         $result=$this->connection->query($sql);
 
-        $sql="INSERT INTO register(email,password)VALUES('$email','$password')";
+        $sql="INSERT INTO facebook(email,password)VALUES('$email','$password')";
         $result=$this->connection->query($sql);
         
             $_SESSION["token"]=session_id();

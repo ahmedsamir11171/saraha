@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 include 'trit.php';
-
+ob_start();
 class auth extends connect
 {
     use valid;
@@ -130,26 +130,22 @@ if($result->num_rows > 0)
     {
      
 
-       if($_SESSION["login"] == "ok")
+       if(!$_SESSION["login"] == "ok")
        {
-    
+        header('Location:http://localhost/saraha/');
   }
-       else{
-        header('Location:http://localhost/saraha/') ;
-        
-       }
+       
        
     }
 
-    public function logoout($id)
+    public function logoout()
     {
-      $sql = "UPDATE register SET online= 0 WHERE id=$id";
-      $result=$this->connection->query($sql);
+ 
 
       session_start();
-      session_regenerate_id(); 
+     $_SESSION['login']=true;
         session_destroy();
-           
+        session_unset();
 
       header('Location:http://localhost/saraha/index.php') ;
 

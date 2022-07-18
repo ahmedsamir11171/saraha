@@ -1,12 +1,13 @@
 <?php
 include ('controller/auth.php');
 error_reporting(0);
-
+@session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>صراحه</title>
+  <link rel="shortcut icon" type="image/x-icon" href="public/img/Logo.png">
   <link rel="shortcut icon" type="image/x-icon" href="public/img/Logo.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -95,6 +96,7 @@ small{
 <?php  
 $x=new auth();
 $ahmed=$_SESSION['username'];
+
 $result=$x->redirct();
 $result=$x->all($ahmed);
 
@@ -106,6 +108,8 @@ $result=$x->all($ahmed);
             <div class="chat">
 
 <?php
+echo session_id('');
+echo $_SERVER['SCRIPT_NAME'];
 foreach($result as $row)
 {
 echo'<img class ="private" src="public/img/anonym.png" alt="">'; 
@@ -130,3 +134,7 @@ echo "<hr>";
 </div>
 
 
+<?php
+
+
+?>

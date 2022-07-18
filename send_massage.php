@@ -7,6 +7,7 @@ include ('controller/auth.php');
 <head>
 <title>صراحه</title>
   <link rel="shortcut icon" type="image/x-icon" href="public/img/Logo.png">
+  <link rel="shortcut icon" type="image/x-icon" href="public/img/Logo.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -77,7 +78,8 @@ include ('controller/auth.php');
 </nav>
 <!-- end navbar -->
 <?php  $x=new auth();
-
+$_SESSION['URL']=$_SERVER['REQUEST_URI'];
+$x->redirct();
 if(isset($_POST['submit']))
 {
   $massage=$_REQUEST['massage'];
